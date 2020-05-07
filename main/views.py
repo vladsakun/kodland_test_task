@@ -9,7 +9,7 @@ from main.models import Post
 
 # Main page with all posts
 class ShowPosts(ListView):
-    queryset = Post.objects.order_by('-post_date')
+    queryset = Post.objects.order_by('-post_date')[:10]
     template_name = 'posts.html'
     context_object_name = 'posts'
 
