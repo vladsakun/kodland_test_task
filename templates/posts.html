@@ -1,0 +1,67 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/posts.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="new-post">
+            <div class="row">
+                <div class="col s12 xl7 l8 m12">
+                    <div class="row" id="comments-row">
+                        <div id="comments-col" class="col s12 l12 xl12 m12 valign-wrapper">
+                            <span id="new-span">NEW</span>
+                            <i class="material-icons">favorite_border</i><span>25</span>
+                            <i class="material-icons">chat_bubble_outline</i><span>25</span>
+                            <i class="material-icons">remove_red_eye</i><span>25</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col xl12 l12 m12 s12 title">
+                            {{ posts.0.post_name }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col xl8 l8 m12 s12 description">
+                            {{ posts.0.post_text|safe }}
+                        </div>
+                    </div>
+                    <button class="read-btn waves-effect waves-light btn-large">Читать</button>
+                </div>
+                <div class="col s12 xl5 l4 m12"><img width="100%" src="{{ posts.0.post_image.url }}"></div>
+            </div>
+        </div>
+    </div>
+    <hr class="gray-hr"/>
+
+    <div class="container" id="other-posts-container">
+        <div class="row">
+            <div class="other-posts-title col xl4 l4 m10 s10">Другие статьи</div>
+            <div class="col offset-xl7 offset-l7 xl1 l1 m2 s2"><img src="{% static 'images/Vector.png' %}"></div>
+        </div>
+        <div class="row">
+
+            {% for post in posts %}
+                {% if forloop.counter != 1 %}
+                    <div class="col s12 xl4 l6 m12">
+                        <div class="card">
+                            <p class="post-date"> {{ post.post_date|date:"d E Y G:i" }}</p>
+                            <p class="post-img"><img height="112" src="{{ post.post_image.url }}"></p>
+                            <p class="post-category">Профессии будущего</p>
+                            <p class="post-name">{{ post.post_name }}</p>
+                            <div class="post-comments">
+                                <i class="material-icons">favorite_border</i><span>25</span>
+                                <i class="material-icons">chat_bubble_outline</i><span>25</span>
+                                <span style="float: right">
+                                    <i class="material-icons">remove_red_eye</i>
+                                    <span>25</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,123 @@
+.tox-tinymce{
+    border: solid #CDCDCD 2px !important;
+    border-radius: 3px !important;
+}
+
+#choose-image-btn {
+    font-weight: bold;
+    background: #315AF2;
+    border-radius: 3px;
+
+}
+
+#image-preview-p {
+    margin: 0;
+}
+
+#create-post-container {
+    padding-top: 2em;
+}
+
+#add-post-title {
+    margin-bottom: 1em;
+}
+
+.post-name-input {
+    color: #315AF2;
+    font-weight: bold;
+    border: solid #CDCDCD 2px !important;
+    border-radius: 3px !important;
+    padding-left: 10px !important;
+    margin: 0 !important;
+
+}
+
+.post-name-input:focus:not([readonly]) {
+    box-shadow: none !important;
+}
+
+#post-name-div {
+    padding-left: 0;
+}
+
+#publish-btn {
+    height: 100%;
+    background: #E9399C;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+#post-name-row {
+    display: flex;
+}
+
+#post-text-div {
+    padding: 0;
+}
+
+#upload-image-title {
+    margin: 0;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 31px;
+    color: #315AF2;
+}
+
+.card {
+    padding: 1em;
+    margin: 0 !important;
+}
+
+.card p {
+    text-align: center;
+}
+
+.note-editable {
+    height: 400px !important;
+}
+
+.title {
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 52px;
+    color: #315AF2;
+}
+
+#delete-icon {
+    color: #BDC3C7;
+}
+
+#delete-icon:hover{
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    border: solid #D7DBDD 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.overlay {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+}
+
+@media screen and (max-width: 900px) {
+    #post-image-div {
+        padding: 0;
+        margin-top: 1em;
+    }
+
+    #post-name-row {
+        display: block;
+    }
+
+    #publish-post-div {
+        padding-left: 0;
+        margin-top: 1em;
+    }
+}
+
